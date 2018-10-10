@@ -2,7 +2,7 @@ package com.chehejia.ota.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
-import com.chehejia.ota.model.EcuData;
+import com.chehejia.ota.model.EcuInfo;
 import com.chehejia.ota.response.Response;
 import com.chehejia.ota.util.FileUtils;
 import com.google.common.collect.Lists;
@@ -71,9 +71,9 @@ public class BomService {
             return Response.createFailure("create json file error");
         }
 
-        List<EcuData> ecuInfoList = Lists.newArrayList();
+        List<EcuInfo> ecuInfoList = Lists.newArrayList();
         for (int index = 0; index < hardwarePartNumbers.length; index++) {
-            EcuData ecuInfo = new EcuData();
+            EcuInfo ecuInfo = new EcuInfo();
             ecuInfo.setHardwarePartNumber(hardwarePartNumbers[index]);
             ecuInfo.setSoftwarePartNumber(softwarePartNumbers[index]);
             ecuInfo.setEcuName(ecuNames[index]);
@@ -125,7 +125,7 @@ public class BomService {
         }
 
         String ecuInfoString = FileUtils.ReadFile(fileName);
-        List<EcuData> ecuInfoList = JSONArray.parseArray(ecuInfoString, EcuData.class);
+        List<EcuInfo> ecuInfoList = JSONArray.parseArray(ecuInfoString, EcuInfo.class);
 
         return Response.createSucceed(ecuInfoList);
     }
