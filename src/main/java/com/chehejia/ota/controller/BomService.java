@@ -33,7 +33,7 @@ import java.util.List;
 public class BomService {
 
     private static String filePath = "/data/otaupload/file";
-    private static String otaServiceUrl = "http://192.168.46.123:20142/ota/package/total/version";
+    private static String otaServiceUrl = "http://127.0.0.1:20142/ota/package/total/version";
 
     @ApiOperation(value = "创建大升级包版本")
     @RequestMapping(value = "/total/version", method = RequestMethod.POST)
@@ -90,10 +90,10 @@ public class BomService {
         try {
             RestTemplate restTemplate = new RestTemplate();
             String bodyValTemplate = "batchCode=" + URLEncoder.encode("2018092710abc123", "utf-8")
-                    + "&vehSeriesNo=" + URLEncoder.encode("M01", "utf-8")
-                    + "&vehModelNo=" + URLEncoder.encode("M01", "utf-8")
-                    + "&totalVersion=" + URLEncoder.encode("1.0.0", "utf-8")
-                    + "&canMatrixVersion=" + URLEncoder.encode("1.0.0", "utf-8");
+                    + "&vehSeriesNo=" + URLEncoder.encode(vehSeriesNo, "utf-8")
+                    + "&vehModelNo=" + URLEncoder.encode(vehModelNo, "utf-8")
+                    + "&totalVersion=" + URLEncoder.encode(totalVersion, "utf-8")
+                    + "&canMatrixVersion=" + URLEncoder.encode(totalVersion, "utf-8");
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
             HttpEntity entity = new HttpEntity(bodyValTemplate, headers);
