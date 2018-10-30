@@ -21,17 +21,36 @@
     </properties>
 
     <dependencies>
+        <!-- spring start-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>1.5.14.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+            <version>1.4.0.RELEASE</version>
+        </dependency>
+        <!-- spring end-->
 
+        <!-- chj start -->
         <dependency>
             <groupId>com.chehejia.ota</groupId>
             <artifactId>response</artifactId>
             <version>0.0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.chehejia.boot</groupId>
+            <artifactId>chehejia-ois-boot-starter</artifactId>
+            <version>0.1.0.10</version>
+        </dependency>
+        <dependency>
+            <groupId>com.chehejia.boot</groupId>
+            <artifactId>chehejia-cache-boot-starter</artifactId>
+            <version>0.2.0.0-SNAPSHOT</version>
+        </dependency>
+        <!-- chj end -->
 
         <dependency>
             <groupId>com.alibaba</groupId>

@@ -33,7 +33,7 @@ import java.util.List;
 public class BomService {
 
     private static String filePath = "/data/otaupload/file";
-    private static String otaServiceUrl = "http://ota-web-test.chehejia.com/ota/package/total/version";
+    private static String otaServiceUrl = "http://localhost:20142/ota/package/total/version";
 
     @ApiOperation(value = "创建大升级包版本")
     @RequestMapping(value = "/total/version", method = RequestMethod.POST)
